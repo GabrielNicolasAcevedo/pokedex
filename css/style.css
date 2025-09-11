@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Variables */
+:root {
+    --clr-black: black;
+    --clr-grey: grey;
+    --clr-white: white;
+
+    --type-normal: #a8a87b;
+    --type-fire:#f08030;
+    --type-water:#6890f0;
+    --type-grass:#78c850;
+    --type-electric:#f8d030;
+    --type-ice:#98d8d8;
+    --type-fighting: #c03;
+    --type-poison:#a040a0;
+    --type-ground:#e0c068;
+    --type-flying: #a890e0;
+    --type-psychic:#f85888;
+    --type-bug:#a88820;
+    --type-rock:#b8a038;
+    --type-ghost:#705989;
+    --type-dark:#705848;
+    --type-dragon:#7038f8;
+    --type-steel:#88b8d0;
+    --type-fairy:#f0b6bc;
+    --type-stellar:#646e75;
+    --type-unknown:#0f0738;
+}
+
+/* Reset de los default value*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--clr-black);
+    font-family: 'Rubik', sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+button {
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+}
+
+/* Extra CSS para las tarjetas individuales de los pokemones*/ 
+
+div,
+div *  {
+    border: 1px solid #333;
+}
+
+
+
+
+/* Colores de los botones usando las variables*/
+.normal {
+    background-color:var(--type-normal);
+    color: var(--clr-black);
+}
+.fighting {
+    background-color:var(--type-fighting);
+    color: var(--clr-white);
+}
+.flying {
+    background-color:var(--type-flying);
+    color: var(--clr-black);
+}
+.poison {
+    background-color:var(--type-poison);
+    color: var(--clr-white);
+}
+.ground {
+    background-color:var(--type-ground);
+    color: var(--clr-black);
+}
+.rock {
+    background-color:var(--type-rock);
+    color: var(--clr-black);
+}
+.bug {
+    background-color: var(--type-bug);
+    color: var(--clr-white);
+}
+.ghost {
+    background-color:var(--type-ghost);
+    color: var(--clr-white);
+}
+.steel {
+    background-color:var(--type-steel);
+    color: var(--clr-black);
+}
+.fire {
+    background-color:var(--type-fire);
+    color: var(--clr-black);
+}
+.water {
+    background-color:var(--type-water);
+    color: var(--clr-white);
+}
+.grass {
+    background-color:var(--type-grass);
+    color: var(--clr-black);
+}
+.electric {
+    background-color:var(--type-electric);
+    color: var(--clr-black);
+}
+.psychic {
+    background-color:var(--type-psychic);
+    color: var(--clr-black);
+}
+.ice {
+    background-color: var(--type-ice);
+    color: var(--clr-black);
+}
+.dragon {
+    background-color:var(--type-dragon);
+    color: var(--clr-white);
+}
+.dark {
+    background-color:var(--type-dark);
+    color: var(--clr-white);
+}
+.fairy {
+    background-color:var(--type-fairy);
+    color: var(--clr-);
+}
+.stellar {
+    background-color:var(--type-stellar);
+    color: var(--clr-white);
+}
+.unknown {
+    background-color:var(--type-unknown);
+    color: var(--clr-white);
+}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        
