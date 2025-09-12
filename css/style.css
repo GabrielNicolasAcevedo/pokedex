@@ -193,6 +193,7 @@ header {
 .tipo {
     border-radius: 100vmax;
     padding: 0.3rem 0.5rem;
+    text-transform: uppercase;
 }
 
 .pokemon-stats {
