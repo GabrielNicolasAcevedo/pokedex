@@ -7,9 +7,9 @@ fetchPokemon
     .then(response => response.json())
     .then(dataList => dataList.results)
     .then(data => {
-        data.forEach(p =>{
+        data.forEach(async p =>{
             const poke = fetch(p.url);
-            poke
+            await poke
             .then(response=> response.json())
             .then(poke => {
                 console.log(poke)
