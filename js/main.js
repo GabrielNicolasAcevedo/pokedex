@@ -1,18 +1,20 @@
 const listaPokemon = document.querySelector("#listaPokemon");
+const btnHeader = document.querySelectorAll(".btn-header");
+
+
 const url = "https://pokeapi.co/api/v2/pokemon/";
 const urlAll = "https://pokeapi.co/api/v2/pokemon?limit=150/";
-const urlMorePoke = "https://pokeapi.co/api/v2/pokemon?limit=999"
-
+const urlTypes = "https://pokeapi.co/api/v2/type/";
 const getPokemon = async () => {
     const response = await fetch(urlAll); // Fetches data and returns a promise
     const data = await response.json(); // promise to JSON parsing to get "results" array
 
-    console.log(data) // check if data is fetched correctly
+   // console.log(data) // check if data is fetched correctly
 
     for (p of data.results) { // for each element in results array
         const poke = await fetch(p.url) // fetch each pokemon data 
             .then(res => res.json()); // parse JSON 
-        console.log(poke) // check if pokemon data is parsed correctly
+       // console.log(poke) // check if pokemon data is parsed correctly
         mostrarPokemon(poke);
     }
 
@@ -101,3 +103,27 @@ const mostrarPokemon = pokemon => {
     ;
     listaPokemon.append(div);
 };
+
+btnHeader.forEach(btn  => {
+    btn.addEventListener("click", async (e) =>{  
+        const type = e.target.textContent.toLowerCase(); // target button text content and transform to lowercase to match data in array
+        console.log(type); // Check if it returns type string to lowercase
+
+        listaPokemon.innerHTML= ""; // reset display list
+        
+        if (type === "ver todos") { // 
+        return getPokemon()
+        } 
+        
+        const urlType = await fetch(urlTypes + `${type}`); // fetch pokemon types with data type clicked
+        const pokeType = await urlType.json(); //parse json with pokemon type data, I need pokemon array.
+        console.log(pokeType); // check if data is parsed correctly
+
+        for (let p of pokeType.pokemon) { //for every element in the object:pokeType in array:pokemon
+            const poke = await fetch(p.pokemon.url); //fetch url of pokemon array
+            const pokemon = await poke.json(); //convert to JSON to fetch pokemon data
+            mostrarPokemon(pokemon);
+        }
+        })
+    
+});
