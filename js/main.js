@@ -3,7 +3,7 @@ const btnHeader = document.querySelectorAll(".btn-header");
 
 
 const url = "https://pokeapi.co/api/v2/pokemon/";
-const urlAll = "https://pokeapi.co/api/v2/pokemon?limit=150/";
+const urlAll = "https://pokeapi.co/api/v2/pokemon?limit=151/";  // first 151 pokemons are gen 1
 const urlTypes = "https://pokeapi.co/api/v2/type/";
 const getPokemon = async () => {
     const response = await fetch(urlAll); // Fetches data and returns a promise
@@ -122,8 +122,10 @@ btnHeader.forEach(btn  => {
         for (let p of pokeType.pokemon) { //for every element in the object:pokeType in array:pokemon
             const poke = await fetch(p.pokemon.url); //fetch url of pokemon array
             const pokemon = await poke.json(); //convert to JSON to fetch pokemon data
+
+            if (pokemon.id < 152){ // only show gen 1 pokemon
             mostrarPokemon(pokemon);
+            }
         }
-        })
-    
+    })
 });
