@@ -4,7 +4,7 @@ const urlAll = "https://pokeapi.co/api/v2/pokemon?limit=151/";
 const urlMorePoke = "https://pokeapi.co/api/v2/pokemon?limit=999"
 
 const getPokemon = async () => {
-    const response = await fetch(urlMorePoke); // Fetches data and returns a promise
+    const response = await fetch(urlAll); // Fetches data and returns a promise
     const data = await response.json(); // promise to JSON parsing to get "results" array
 
     console.log(data) // check if data is fetched corectly
